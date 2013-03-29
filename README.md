@@ -1,9 +1,9 @@
 JS Test Environment
 ========
 
-## JavaScriptのテスト環境 ##
+## JavaScriptのテスト環境の雛形 ##
 
-__Node.js、ブラウザ両方で動くモジュールのテスト__ のための環境
+**Node.js、ブラウザ両方で動くモジュールのテスト** のための環境
 
 - クライアントサイドのテストは「AMD形式」とそれ以外のテストの２通り
 - テストするモジュール（サンプルでは /public/js/mod.js）は本番と同じディレクトリに
@@ -49,7 +49,7 @@ __Node.js、ブラウザ両方で動くモジュールのテスト__ のため�
 
 - AMD形式でモジュールを読み込む場合は
     -- `t/normal.html` を `t/requirejs.html` に
-	-- prove を使う場合は `prove run-requirejs.sh`
+    -- prove を使う場合は `prove run-requirejs.sh`
 
 
 ### Node.js で動くコードのテスト ###
