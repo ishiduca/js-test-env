@@ -48,8 +48,8 @@ JS Test Environment
 ```
 
 - AMD形式でモジュールを読み込む場合は
--- `t/normal.html` を `t/requirejs.html` に
--- prove を使う場合は `prove run-requirejs.sh`
+  - `t/normal.html` を `t/requirejs.html` に
+    - prove を使う場合は `prove run-requirejs.sh`
 
 
 ### Node.js で動くコードのテスト ###
