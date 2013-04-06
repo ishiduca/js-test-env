@@ -1,33 +1,26 @@
-var mod = {};
-mod.puts = function () {
-    if ( "undefined" !== typeof console
-      && "function" === typeof console.log) {
-        console.log.apply(arguments);
-    }
-};
+(function (define) {
+    define([], function () {
 
+        var mod  = {};
+        mod.puts = function () {
+           if ( 'undefined' !== typeof console
+             && 'function'  === typeof console.log ) {
+               console.log.apply(arguments);
+           }
+        };
 
-// AMD
-if (
-     "function"  === typeof define
-  && "undefined" !== typeof requirejs
-) {
-
-    define(function () {
         return mod;
     });
-}
+})(
+// AMD - RequireJS
+    'function'  === typeof define    &&
+    'function'  === typeof requirejs
+  ? define
 // node.js
-else if (
-     "undefined" !== typeof module
-  && module.exports
-  && "function"  === typeof require
-) {
-
-
-    module.exports.mod = mod;
-}
-//
-else if (this === window) {
-    ;
-}
+  : 'undefined' !== typeof module &&
+    module.exports &&
+    'function'  === typeof require
+  ? function (dep, fact) { module.exports.mod = fact(); }
+// this === window
+  : function (dep, fact) { this['mod'] = fact(); }
+);
